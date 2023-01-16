@@ -1,0 +1,38 @@
+BoxLayoutExample:
+#write MainWidget to run Mainwidget class
+
+<BoxLayoutExample>:
+    orientation: "vertical"
+    Button:
+        text: "Hello"
+        #size doesn't work here as it is fixed by layout, use size_hint and pos_hint which works on proportion 
+        size_hint: .8,0.5 #hence 80% length and 50% breadth
+        
+        #x, center-x,right
+        #y,center_y, top
+        pos_hint: {}
+    Button:
+        text: "World"
+        #size can be use when size_hint: None, None
+        size: "40dp","40dp"
+        size_hint: None, None
+    Button:
+        text: "."
+        #size can be use when size_hint: None, None
+        size_hint: None, None
+        width: "40dp"
+        height: "40dp"
+    Button:
+        text: "haha"
+
+#for the definition
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "40dp","40dp"
+        pos: "40dp","40dp"
+    Label
+        text: "This is a label"
+        size: "40dp","40dp"
+        pos: "100dp","100dp"
+        color: 0,1,1,1
