@@ -1,5 +1,46 @@
-BoxLayoutExample: 
+PageLayoutExample: 
 #write MainWidget to run Mainwidget class, also not wrong as shown
+<PageLayoutExample@PageLayout>:
+    MainWidget
+    BoxLayoutExample
+    AnchorLayoutExample
+    GridLayoutExample
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height #already processed
+
+<StackLayoutExample>:
+    #left-right or top-bottom
+    #padding: ("20dp","20dp","20dp","20dp")
+    #spacing: "20dp","20dp"
+    
+
+<GridLayoutExample@GridLayout>:
+    #one ofrows and columns need to be specified
+    cols:2
+    rows:2
+    Button:
+        text: "grid A"
+        size_hint: 0.2,1
+    BoxLayoutExample:
+    Button:
+        size_hint:0.2,1
+        text: "gird C"
+
+<AnchorLayoutExample>:
+    #right, left, center
+    anchor_x: "center"
+    #bottom,top, center
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: .1,.1
+        Button:
+            text: "anchor A"
+
+        Button:
+            text: "anchor B"
 
 <BoxLayoutExample>:
     orientation: "vertical"
@@ -14,15 +55,21 @@ BoxLayoutExample:
         size_hint: None, None
         #x, center_x,right
         #y,center_y, top
-        pos_hint: {"x": 0.5}
+        pos_hint: {"center_x": 0.5}
     Button:
         text: "."
         #size can be use when size_hint: None, None
         size_hint: None, None
         width: "40dp"
         height: "40dp"
-    Button:
-        text: "haha"
+    BoxLayout:
+        spacing: "10dp"
+        Button:
+            text: "haha"
+        Button: 
+            text: "This"
+        Button: 
+            text: "Works"
 
 #for the definition
 <MainWidget>:

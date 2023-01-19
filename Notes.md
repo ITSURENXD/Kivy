@@ -13,20 +13,30 @@
     DISADVANTAGE: can't accomodate for change in screen size
 
 # Layouts
-    1) Box Layout:
-        stack vertically and horizontally 
+1. Box Layout:
+stack vertically and horizontally 
 
-    2) Anchor Layout
-        puts objects on all sides of the screen
+2. Anchor Layout
+puts objects on all sides of the screen
 
-    3) Grid Layout 
-        puts objects in the column and row format 
+3. Grid Layout 
+puts objects in the column and row format. It is *mandatory* to specify rows and cols.
+[IMP] Size_hint may not work here because of multiple rows or column.
 
-    4) Scroll view:
-        one long object that can be scrolled
+4. StackLayout:
+gets stacked on multiple lines. need size of elements, which can be indiviaully unique. However they may not be scrolled hence the need of scroll view
 
-    5) Page layout:
-        Page like layout
+5. Scroll view:
+one long object that can be scrolled. [IMP] needs size of the item to be scrolled: we can use self.minimum_height to get away most of the times
 
-    Layouts can't use size and pos as they are decided by the layout itself based on the availabe screen   space. However, we may use the size_hint and pos_hint to give a size based on proportion to its default size where 1=100%
-    Also, layouts CAN use size and pos if we put size_hint: None,None. In this case, width and height can be used instead of size
+6. Page layout:
+Page like layout
+
+Layouts can't use size and pos as they are decided by the layout itself based on the availabe screen   space. However, we may use the size_hint and pos_hint to give a size based on proportion to its default size where 1=100%
+Also, layouts CAN use size and pos if we put size_hint: None,None. In this case, width and height can be used instead of size
+
+# Embedding
+Layouts can be imbedded inside another layout of different kind. and can be spaced with a __spacing: "<number> dp"__
+
+# shortcuts
+Instead of creating classes in the py file we can simply define it in the kv with <anme of the class>@<layout>
