@@ -7,15 +7,14 @@ BoxLayoutExample:
         text: "Hello"
         #size doesn't work here as it is fixed by layout, use size_hint and pos_hint which works on proportion 
         size_hint: .8,0.5 #hence 80% length and 50% breadth
-        
-        #x, center-x,right
-        #y,center_y, top
-        pos_hint: {}
     Button:
         text: "World"
         #size can be use when size_hint: None, None
         size: "40dp","40dp"
         size_hint: None, None
+        #x, center_x,right
+        #y,center_y, top
+        pos_hint: {"x": 0.5}
     Button:
         text: "."
         #size can be use when size_hint: None, None

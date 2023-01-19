@@ -2,3 +2,5 @@
 .env
 #ignoring the ignored directory,. and corrected the name 
 /ignored_folder
+
+tempCodeRunnerFile.py
