@@ -1,6 +1,19 @@
-WidgetsExample: 
+ImagesExample: 
 #write MainWidget to run Mainwidget class, also not wrong as shown
 #END OF SECOND PART     
+
+<ImagesExample@GridLayout>: 
+    cols:3
+    Image: 
+        source: "images/cake.jpg"
+    Image: 
+        source: "images/cake.jpg"
+        allow_stretch: True
+    Image: 
+        source: "images/cake.jpg"
+        allow_stretch: True
+        keep_ratio: False #needs allow stretch property
+
 <WidgetsExample>:
     cols: 3
     ToggleButton:
@@ -16,7 +29,37 @@ WidgetsExample:
         font_size: "80dp"
         color: 0,1,1,1
     Switch:
-        on_active:
+        id: my_switch
+        on_active: root.on_switch(self)
+        active: True
+
+    Slider:
+        id: my_slider #used in label below
+        min: 0
+        max: 100
+        value:0 #default value
+        orientation: 'horizontal' #default orientation
+        disabled: not my_switch.active
+        #on_value: root.on_slider(self) Not needed now
+    BoxLayout:
+        orientation: 'vertical'
+        Label: 
+            text: str(int(my_slider.value)) #using idd to get the values 
+            font_name: "fonts/Lcd.ttf"
+            font_size: "30dp"
+            color: 0,1,1,1
+        ProgressBar:
+            max: 100
+            value: my_slider.value
+    TextInput:
+        id: my_textinput
+        text: "type something" #default 
+        multiline: False #Not default
+        on_text_validate: root.on_text_validates(self)
+    Label:
+        text: root.textinputs
+
+        
 
 
 #END OF FIRST PART  
