@@ -1,5 +1,25 @@
-PageLayoutExample: 
+WidgetsExample: 
 #write MainWidget to run Mainwidget class, also not wrong as shown
+#END OF SECOND PART     
+<WidgetsExample>:
+    cols: 3
+    ToggleButton:
+        text: "toggle"
+        on_state: root.on_toggle(self)
+    Button:
+        text: "Count"
+        on_press: root.on_button_click() #python function, no need for self but root
+        disabled: not root.count_enable #nOt will reverse the boolean
+    Label: 
+        text: root.my_text #from python code
+        font_name: 'fonts/Lcd.ttf'
+        font_size: "80dp"
+        color: 0,1,1,1
+    Switch:
+        on_active:
+
+
+#END OF FIRST PART  
 <PageLayoutExample@PageLayout>:
     MainWidget
     BoxLayoutExample

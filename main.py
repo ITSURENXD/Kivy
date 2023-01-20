@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.metrics import dp
+from kivy.properties import StringProperty,BooleanProperty
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
@@ -7,6 +8,28 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 """Button also needs to be imported"""
 from kivy.uix.button import Button
+
+#for python code in 2nd part
+class WidgetsExample(GridLayout):
+    #no need for an initiator as we are not initiating anything
+    count=0
+    count_enable=BooleanProperty(False)
+    my_text = StringProperty("0")
+    def on_button_click(self):
+        print("Button Clicked")
+        if self.count_enable==True:
+            self.count+=1
+
+        #[IMP] use self to change the value on the scope of the class and not function
+        self.my_text=str(self.count)
+
+    def on_toggle(self,widget):
+        if widget.state=="normal":
+            widget.text="OFF" #no need for string properrty as the widget is passed as an argument
+            self.count_enable=False
+        else:
+            widget.text="ON"
+            self.count_enable=True
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
