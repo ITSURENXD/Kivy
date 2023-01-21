@@ -47,4 +47,7 @@ Instead of creating classes in the py file we can simply define it in the kv wit
 - we changed the app names and added .ttf in include of builder.spec file for custom fonts
 - we used: __buildozer android debug deploy run__ to create the apk on the bin folder on the main.py hosting directory
 - we went to a loop of **Waiting for app to start** but apk was already made so we __ctrl c__ out of it and copied it to the phone and installed it
--[IMP] we used __buildozer android clean__ everytime we chaged somethingin the buildozer.spec file
+- [IMP] we used __buildozer android clean__ everytime we chaged somethingin the buildozer.spec fil
+    ## FIXES:
+    - connect the phone to pc and use the adb to get __adb logcat -d>"D:\logcata.txt"__ which dumps it to logcata text file
+    - open the text file and with **ctrl F** search for **Traceback** which will give use the errors in terms of python
