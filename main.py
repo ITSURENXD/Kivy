@@ -73,7 +73,7 @@ class BoxLayoutExample(BoxLayout):
         #default is horizontal
         self.orientation="vertical"
         #this is first come, first served. Order is important 
-        self.add_widget(b1)
+        self.add_widget(b1)sfasdf
         self.add_widget(b2)
         self.add_widget(b3)"""
     

@@ -40,3 +40,11 @@ Layouts can be imbedded inside another layout of different kind. and can be spac
 
 # shortcuts
 Instead of creating classes in the py file we can simply define it in the kv with <anme of the class>@<layout>
+
+# final steps
+- we copied the directory to linux subsystem with: __sudo cp -r  /mnt/d/get_closest/development /__ (here mnt is to access windows files and / it the default directory on linux)
+- we ran: __buildozer init__ to create a buidozer.spec file [IMP] while on the main.py hosting directory
+- we changed the app names and added .ttf in include of builder.spec file for custom fonts
+- we used: __buildozer android debug deploy run__ to create the apk on the bin folder on the main.py hosting directory
+- we went to a loop of **Waiting for app to start** but apk was already made so we __ctrl c__ out of it and copied it to the phone and installed it
+-[IMP] we used __buildozer android clean__ everytime we chaged somethingin the buildozer.spec file
